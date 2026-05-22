@@ -1,0 +1,6 @@
+name = "FORM"
+grammar = "form"
+path_suffixes = ["frm", "prc", "inc", "h"]
+line_comments = ["* "]
+tab_size = 4
+hard_tabs = false

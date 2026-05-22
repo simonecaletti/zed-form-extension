@@ -1,0 +1,11 @@
+id = "form"
+name = "FORM"
+version = "0.0.1"
+schema_version = 1
+authors = ["Simone"]
+description = "FORM language support for Zed"
+repository = "https://github.com/REPLACE_ME/zed-form"
+
+[grammars.form]
+repository = "file:///home/scaletti/software/zed-form-extension/tree-sitter-form"
+rev = "main"

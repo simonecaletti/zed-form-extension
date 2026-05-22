@@ -1,0 +1,13 @@
+id = "form"
+name = "FORM"
+version = "0.0.1"
+schema_version = 1
+authors = ["Simone"]
+description = "FORM language support for Zed"
+repository = "https://github.com/REPLACE_ME/zed-form"
+
+# Replace the path below with the absolute path to your local tree-sitter-form checkout.
+# Then copy this file to extension.toml (or run scripts/use-local-grammar.sh).
+[grammars.form]
+repository = "file:///absolute/path/to/tree-sitter-form"
+rev = "main"
