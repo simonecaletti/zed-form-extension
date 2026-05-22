@@ -1,0 +1,3 @@
+[submodule "tree-sitter-form"]
+	path = tree-sitter-form
+	url = ./tree-sitter-form
