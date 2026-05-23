@@ -1,65 +1,44 @@
-# FORM language support for Zed
+# FORM for Zed
 
-Syntax highlighting and snippets for the [FORM](https://www.nikhef.nl/~form/) symbolic manipulation language.
+Syntax highlighting for the [FORM](https://www.nikhef.nl/~form/) symbolic manipulation language.
 
-## Fresh installation
+## Features
 
-### Requirements
+- Syntax highlighting for `.frm`, `.prc`, `.inc`, `.h` files
+- Case-insensitive keyword recognition (`if` / `If` / `IF` all work)
+- Highlights: keywords, declarations, control flow, functions, dollar variables, operators, comments
+- Bracket matching
+- Outline view (Local/Global expressions, declarations, dot directives)
 
-- [Zed](https://zed.dev) editor
-- Git
+## Install as a dev extension (local development)
 
-### Steps
-
-1. Clone the extension repository:
-
-   ```bash
-   git clone https://github.com/simonecaletti/zed-form-extension
-   ```
-
-2. Open Zed and run the command **Extensions: Install Dev Extension**
-   (`Cmd+Shift+P` → type "dev extension").
-
-3. Select the `zed-form` directory inside the cloned repository.
-
-4. Zed will compile the grammar and activate the extension automatically.
-   Open any `.frm`, `.prc`, or `.inc` file to verify highlighting is active.
-
-> **Note:** Zed downloads the tree-sitter grammar source from GitHub and
-> compiles it locally on first install. An internet connection is required
-> the first time.
-
-## What the extension provides
-
-| Feature | Details |
-|---|---|
-| Syntax highlighting | Keywords, built-in functions (`g_`, `d_`, `trace4`, …), constants (`i_`, `pi_`, …), pattern-match sets (`int_`, `pos_`, …), comments, preprocessor directives, dollar variables, wildcards |
-| Snippets | Common constructs: `#procedure`, `if`/`endif`, `repeat`, `do`, `argument`, `Local`, `id`, `Symbol`, `#call`, `#define`, `#ifdef`, and more — triggered by typing the keyword and pressing Tab |
-| File types | `.frm`, `.prc`, `.inc`, `.h` |
-| Comment toggle | `* ` (Zed's line-comment command uses this prefix) |
-
-## Local development
+From the repository root:
 
 ```bash
-# Build and test the grammar
+# 1. Build the tree-sitter parser
 cd tree-sitter-form
 npm install
 npm run generate
-npm test
+npm test          # verify all corpus tests pass
 
-# Point the extension at your local grammar (optional)
+# 2. Point the Zed extension at the local grammar
 cd ../zed-form
 ./scripts/use-local-grammar.sh
 ```
 
-Then in Zed: **Extensions: Install Dev Extension** → select the `zed-form` directory.
+Then in Zed: **Extensions → Install Dev Extension** → select the `zed-form` directory.
 
-## Publishing flow
+To restore `extension.toml` after dev work:
 
-1. Push `tree-sitter-form` to its own public GitHub repository.
-2. Copy the commit SHA of the version you want to release.
-3. Edit `zed-form/extension.toml`:
-   - set `repository` under `[grammars.form]` to the GitHub URL of `tree-sitter-form`;
-   - set `rev` to the commit SHA.
-4. Push `zed-form` to its own public GitHub repository.
-5. Submit to the [Zed extension registry](https://github.com/zed-industries/extensions).
+```bash
+git checkout -- extension.toml
+```
+
+## Publishing
+
+Before publishing to the Zed extension marketplace:
+
+1. Push `tree-sitter-form` to a public GitHub repository.
+2. Edit `extension.toml`:
+   - Set `[grammars.form] repository` to your GitHub URL.
+   - Set `rev` to the exact commit SHA you want to pin.
