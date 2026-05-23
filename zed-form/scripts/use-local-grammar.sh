@@ -5,7 +5,7 @@
 set -euo pipefail
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 EXT_DIR="$(cd -- "$SCRIPT_DIR/.." && pwd)"
-GRAMMAR_DIR="$(cd -- "$EXT_DIR/../tree-sitter-form" && pwd)"
+GRAMMAR_DIR="$(cd -- "$EXT_DIR/../../tree-sitter-form" && pwd)"
 
 cat > "$EXT_DIR/extension.toml" <<TOML
 id = "form"
