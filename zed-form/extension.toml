@@ -2,7 +2,7 @@ id = "form"
 name = "FORM"
 version = "0.0.1"
 schema_version = 1
-authors = ["Simone Caletti"]
+authors = ["Simone Caletti <simone.caletti@unito.it>"]
 description = "FORM language support for Zed"
 repository = "https://github.com/simonecaletti/zed-form-extension"
 
