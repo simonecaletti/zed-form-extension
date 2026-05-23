@@ -1,0 +1,3 @@
+[submodule "tree-sitter-form"]
+	path = tree-sitter-form
+	url = https://github.com/simonecaletti/tree-sitter-form.git
