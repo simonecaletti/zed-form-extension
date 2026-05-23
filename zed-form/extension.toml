@@ -4,8 +4,8 @@ version = "0.0.1"
 schema_version = 1
 authors = ["Simone"]
 description = "FORM language support for Zed"
-repository = "https://github.com/zed-form-extension/zed-form"
+repository = "https://github.com/simonecaletti/zed-form-extension/zed-form"
 
 [grammars.form]
-repository = "file:///home/scaletti/software/zed-form-extension/tree-sitter-form"
-rev = "00900af5993800752b62c5ac2723b2e9d578aaa8"
+repository = "https://github.com/simonecaletti/tree-sitter-form"
+rev = "0338aa83af16dae1e9b994dbeb953ac27e90b7d7"
