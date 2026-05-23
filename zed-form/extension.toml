@@ -9,6 +9,3 @@ repository = "https://github.com/simonecaletti/zed-form-extension/zed-form"
 [grammars.form]
 repository = "https://github.com/simonecaletti/tree-sitter-form"
 rev = "b1e55a161e6739d4a37208e8a72de23d4a41ab94"
-
-[[snippets]]
-path = "snippets/form.json"
